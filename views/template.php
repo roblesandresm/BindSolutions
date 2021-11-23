@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,65 +12,57 @@
     <!--
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Inicio | Dashboard</title>
+    <title><?php $title = isset($_GET["ruta"]) ? $_GET["ruta"] : "Inicio" ; echo $title; ?> | Dashboard </title>
   </head>
   <body>
-    <!-- Header -->
-    <div class="container-fluid">
-        <div class="row justify-content-center align-content-center">
-            <div class="col-8 barra">
-                <h2><span>B</span>ind<span>S</span>olutions</h2>
-            </div>
-            <div class="col-4 text-right barra">
-                <ul class="navbar-nav mr-auto">
-                    <li>
-                        <a 
-                            href="#" 
-                            class="px-3 text-light perfil dropdown-toggle" 
-                            id="navbar-Dropdown" 
-                            role="button" data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                        >
-                            <i class="fas fa-user-circle user"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                            <a href="#" class="dropdown-item menu-perfil cerrar">
-                                <i class="fas fa-sign-out-alt m-1"></i>Cerrar sesion
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    <?php 
+        if (isset($_SESSION["iniciarSesion"]) && isset($_SESSION["iniciarSesion"]) == "ok") {
+            
+        include "modules/header.php";
+    
+    ?>
 
     <!-- MAIN -->
     <div class="container-fluid">
         <div class="row">
-            <!-- BARRA LATERAL-->
-            <div class="barra-lateral col-12 col-sm-auto">
-                <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
-                    <a href="#" alt="Inicio" class="active"><i class="fas fa-home"></i><span>Inicio</span></a>
-                    <a href="#" alt="Usuarios"><i class="fas fa-users"></i><span>Usuarios</span></a>
-                    <a href="#"><i class="fab fa-product-hunt"></i><span>Productos</span></a>
-                    <a href="#"><i class="fas fa-calendar-check"></i><span>Eventos</span></a>
-                    <a href="#"><i class="fas fa-store"></i><span>Puntos de venta</span></a>
-                    <a href="#"><i class="fas fa-dollar-sign"></i><span>Ventas</span></a>
-                </nav> 
-            </div>
-            <!-- CONTENIDO PRINCIPAL -->
-            <main class="main col">
-                <div class="row justify-content-center align-content-center text-center">
-                    <div class="columna col-lg-6">
-                        CONTENIDO
-                    </div>
-                </div>
-            </main>
+            <?php
+
+                /**
+                 * SIDEBAR
+                 */
+                include "modules/sidebar.php";
+
+                /**
+                 * CONTENT
+                */
+                if (isset($_GET["ruta"])) {
+                    if ($_GET["ruta"] == "inicio" ||
+                        $_GET["ruta"] == "usuarios" ||
+                        $_GET["ruta"] == "productos" ||
+                        $_GET["ruta"] == "eventos" ||
+                        $_GET["ruta"] == "puntos-venta" ||
+                        $_GET["ruta"] == "inventarios" ||
+                        $_GET["ruta"] == "ventas" ||
+                        $_GET["ruta"] == "salir"
+                    ) {
+                        include "modules/".$_GET["ruta"].".php";
+                    } else {
+                        include "modules/404.php";
+                    }
+                } else {
+                    include "modules/inicio.php";
+                }
+            ?>
         </div>
     </div>
+    <?php } else {
+        include "modules/login.php";
+    }
+    
+    ?>
 
 
     <!-- Sources hosting -->

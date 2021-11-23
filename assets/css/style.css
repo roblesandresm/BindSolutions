@@ -2,6 +2,11 @@ body {
     background-color: #f1f1f1;
 }
 
+header .logo a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .barra {
     background-color: #3c8dbc;
     color: white;
@@ -109,6 +114,26 @@ body {
     /*.dropdown-menu {
         margin: 20px -79px 0px;
     }*/
+}
+/* ESTILOS DEL LOGIN */
+#login {
+    background: url("../img/bar-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+
+}
+
+#login h3 {
+    font-size: 35px;
+}
+
+#login-box {
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 30px;
 }
 
 @media screen and (max-width: 575px) {
