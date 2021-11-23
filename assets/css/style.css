@@ -92,7 +92,7 @@ body {
 }
 
 /* MEDIAQUERY */
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1300px) {
     .barra {
         min-width: auto;
     }
@@ -109,4 +109,33 @@ body {
     /*.dropdown-menu {
         margin: 20px -79px 0px;
     }*/
+}
+
+@media screen and (max-width: 575px) {
+    .barra-lateral {
+        min-height: auto;
+    }
+
+    .barra-lateral .menu a {
+        display: inline-block;
+        border-bottom: none;
+    }
+
+    .barra-lateral .menu a span {
+        transition: display 1000ms;
+    }
+
+    .barra-lateral .menu a:hover span{
+        margin-left: 10px;
+        display: inline;
+    }
+
+    .dropdown-menu {
+        margin: 20px -78px 0px;
+    }
+
+    body {
+        font-size: 16px;
+        overflow: visible;
+    }
 }
