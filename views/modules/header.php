@@ -1,24 +1,32 @@
 <header class="container-fluid">
     <div class="row justify-content-center align-content-center">
-        <div class="col-8 barra">
-            <h2 class="logo">
+        <div class="col-8  col-xs-auto barra">
+            <div class="logo">
                 <a href="inicio">
-                    <span>B</span>ind<span>S</span>olutions
+                    <img src="assets/img/LOGO_BIND.png" alt="Logo de bind solutions">
                 </a>
-            </h2>
+            </div>
         </div>
-        <div class="col-4 text-right barra">
+        <div class="col-4 col-xs-auto text-right barra">
             <ul class="navbar-nav mr-auto">
                 <li>
                     <a 
                         href="#" 
                         class="px-3 text-light perfil dropdown-toggle" 
                         id="navbar-Dropdown" 
-                        role="button" data-toggle="dropdown"
+                        data-toggle="dropdown"
                         aria-haspopup="true"
-                        aria-expanded="false"
+                        aria-expanded="false" 
+                        role="button"
                     >
-                        <i class="fas fa-user-circle user"></i>
+                        <?php
+                            if ($_SESSION['foto'] != "") {
+                                echo '<img src="'.$_SESSION['foto'].'" class="user-image"';
+                            } else {
+                                echo '<img src="views/img/usuarios/default/anonymous.png" class="user-image"';
+                            }
+                        ?>
+                        <span class="hidden-xs"><?php echo $_SESSION['nombre']; ?></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
                         <a href="salir" class="dropdown-item menu-perfil cerrar">

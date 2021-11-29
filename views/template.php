@@ -9,13 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS CDN -->
-    <!--
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    -->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="assets/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title><?php $title = isset($_GET["ruta"]) ? $_GET["ruta"] : "Inicio" ; echo $title; ?> | Dashboard </title>
+    <!-- SweetAlert2 -->
+    <script src="assets/js/sweetalert2.all.min.js"></script>
+    <title><?php $title = isset($_SESSION["iniciarSesion"]) == "ok" ? $_GET["ruta"] : "iniciar sesion" ; echo $title; ?> | Dashboard </title>
   </head>
   <body>
     <?php 
@@ -26,7 +27,7 @@
     ?>
 
     <!-- MAIN -->
-    <div class="container-fluid">
+    <div class="container-fluid contenedor-principal">
         <div class="row">
             <?php
 
@@ -68,12 +69,12 @@
     <!-- Sources hosting -->
     <script src="assets/js/jquery-3.6.0.slim.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/js/responsive.bootstrap4.min.js"></script>
+    <script src="assets/js/DataTables.responsive.min.js"></script>
     <script src="https://kit.fontawesome.com/c5430e362e.js" crossorigin="anonymous"></script>
-    
-    <!-- CDN: jQuery and Bootstrap Bundle (includes Popper) -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-    -->
-  </body>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/usuarios.js"></script>
+</body>
 </html>

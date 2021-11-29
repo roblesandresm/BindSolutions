@@ -1,7 +1,7 @@
 <!-- BARRA LATERAL-->
-<div class="barra-lateral col-12 col-sm-auto">
+<div class="barra-lateral col-sm-12">
     <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
-        <a href="inicio" alt="Inicio" class="active"><i class="fas fa-home"></i><span>Inicio</span></a>
+        <a href="inicio" alt="Inicio" ><i class="fas fa-home"></i><span>Inicio</span></a>
         <a href="eventos"><i class="fas fa-calendar-check"></i><span>Eventos</span></a>
         <a href="usuarios" alt="Usuarios"><i class="fas fa-users"></i><span>Usuarios</span></a>
         <a href="productos"><i class="fab fa-product-hunt"></i><span>Productos</span></a>

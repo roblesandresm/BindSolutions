@@ -2,9 +2,17 @@ body {
     background-color: #f1f1f1;
 }
 
+.contenedor-principal {
+    background-color: #fff;
+}
+
 header .logo a {
     text-decoration: none;
     color: #fff;
+}
+
+header .logo img {
+    width: 100px;
 }
 
 .barra {
@@ -14,17 +22,13 @@ header .logo a {
     padding-bottom: 10px;
 }
 
-.barra h2 {
-    margin: 0;
-}
-
-.barra span {
-    font-weight: bold;
-    color: black;
-}
-
 .perfil .user {
     font-size: 30px;
+}
+
+.perfil .user-image {
+    width: 35px;
+    border-radius: 50%;
 }
 
 .dropdown-menu {
@@ -58,6 +62,7 @@ header .logo a {
 
 .barra-lateral a {
     color: #fff;
+    min-width: auto;
 }
 
 /* ESTILOS MENU BARRA LATERAL */
@@ -88,33 +93,21 @@ header .logo a {
 
 /* MAIN CONTENT */
 .main {
-    padding-top: 40px;
+    padding-top: 10px;
+    margin: 10px 20px;
+    background-color: #fff;
 }
 
 .main .columna {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-/* MEDIAQUERY */
-@media screen and (max-width: 1300px) {
-    .barra {
-        min-width: auto;
-    }
-    .barra-lateral {
-        min-width: auto;
-        min-height: auto;
-    }
-    .barra-lateral .menu a span {
-        display: none;
-    }
-    .barra-lateral .menu a i {
-        margin: 0;
-    }
-    /*.dropdown-menu {
-        margin: 20px -79px 0px;
-    }*/
+.main .action-buttons {
+    margin-bottom: 10px;
+    padding: 0 10px;
 }
+
 /* ESTILOS DEL LOGIN */
 #login {
     background: url("../img/bar-background.jpg");
@@ -125,8 +118,14 @@ header .logo a {
 
 }
 
-#login h3 {
-    font-size: 35px;
+#login .logo-login {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+#login .logo-login img {
+    width: 250px;
 }
 
 #login-box {
@@ -136,9 +135,11 @@ header .logo a {
     margin-top: 30px;
 }
 
-@media screen and (max-width: 575px) {
+/* MEDIAQUERY */
+@media screen and (max-width: 1000px) {
     .barra-lateral {
         min-height: auto;
+        text-align: center;
     }
 
     .barra-lateral .menu a {
@@ -146,17 +147,25 @@ header .logo a {
         border-bottom: none;
     }
 
+    .barra-lateral .menu a i {
+        margin-right: 0px;
+    }
+
+    /*.barra-lateral .menu a:hover > i {
+        margin-right: 10px;
+    }*/
+
     .barra-lateral .menu a span {
         transition: display 1000ms;
+        display: none;
     }
 
-    .barra-lateral .menu a:hover span{
-        margin-left: 10px;
+    /*.barra-lateral .menu a:hover span{
         display: inline;
-    }
+    }*/
 
     .dropdown-menu {
-        margin: 20px -78px 0px;
+        margin: 20px;
     }
 
     body {
@@ -164,3 +173,7 @@ header .logo a {
         overflow: visible;
     }
 }
+
+/*@media screen and (max-width: 750px) {
+   
+}*/

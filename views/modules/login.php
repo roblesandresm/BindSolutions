@@ -1,5 +1,7 @@
 <div id="login">
-    <h3 class="text-center text-white pt-5">BindSolutions</h3>
+    <div class="logo-login">
+        <img src="assets/img/LOGO_BIND.png" alt="Logo de bind solutions">
+    </div>
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
