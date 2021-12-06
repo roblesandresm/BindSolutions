@@ -76,5 +76,6 @@
     <script src="https://kit.fontawesome.com/c5430e362e.js" crossorigin="anonymous"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/usuarios.js"></script>
+    <script src="assets/js/productos.js"></script>
 </body>
 </html>

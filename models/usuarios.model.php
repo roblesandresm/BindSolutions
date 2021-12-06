@@ -26,7 +26,7 @@ class ModelUsuarios
     }
 
     static public function mdlCrearUsuario($tabla, $datos) {
-        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, username, password, tipo, foto) VALUES(:nombre, :username, :password, :tipo, :foto)");
+        $stmt = Conexion::conectar()->prepare("INSERT INTO $tabla(nombre, username, password, tipo, foto) VALUES(:nombre, :username, :password, :tipo, :foto);");
         $stmt -> bindParam(":nombre", $datos['nombre'], PDO::PARAM_STR);
         $stmt -> bindParam(":username", $datos['username'], PDO::PARAM_STR);
         $stmt -> bindParam(":password", $datos['password'], PDO::PARAM_STR);
