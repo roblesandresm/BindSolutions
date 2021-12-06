@@ -37,7 +37,7 @@ $(".nuevaImagen").change(function () {
     }
 });
 
-/* EDITAR USUARIO */
+/* EDITAR PRODUCTO */
 $(document).on('click', '.btnEditarProducto', function () {
     var idProducto = $(this).attr('idProducto');
 
@@ -58,6 +58,7 @@ $(document).on('click', '.btnEditarProducto', function () {
             $('#idProducto').val(respuesta['id']);
             $('#editarPrecioCompra').val(respuesta['precio_compra']);
             $('#editarPrecioVenta').val(respuesta['precio_venta']);
+            $('#imagenActual').val(respuesta['foto']);
 
             if (respuesta['foto'] != "") {
                 $('#imagenActual').val(respuesta['foto']);
@@ -69,7 +70,7 @@ $(document).on('click', '.btnEditarProducto', function () {
 });
 
 
-/* EDITAR USUARIO */
+/* ELIMINAR PRODUCTO */
 $(document).on('click', '.btnEliminarProducto', function () {
     var idProducto = $(this).attr('idProducto');
     console.log(idProducto);
