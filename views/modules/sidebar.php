@@ -1,5 +1,5 @@
 <!-- BARRA LATERAL-->
-<div class="barra-lateral col-sm-12">
+<div class="barra-lateral col-2">
     <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
         <a href="inicio" alt="Inicio" ><i class="fas fa-home"></i><span>Inicio</span></a>
         <a href="eventos"><i class="fas fa-calendar-check"></i><span>Eventos</span></a>

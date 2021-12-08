@@ -54,7 +54,7 @@ header .logo img {
 /* BARRA LATERAL */
 .barra-lateral {
     background-color: #222d32;
-    min-width: 250px;
+    min-width: 200px;
     min-height: 100vh;
     color: #fff;
     padding: 0;
@@ -94,13 +94,7 @@ header .logo img {
 /* MAIN CONTENT */
 .main {
     padding-top: 10px;
-    margin: 10px 20px;
     background-color: #fff;
-}
-
-.main .columna {
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .main .action-buttons {
@@ -136,7 +130,7 @@ header .logo img {
 }
 
 /* MEDIAQUERY */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 991.98px) {
     .barra-lateral {
         min-height: auto;
         text-align: center;
@@ -151,29 +145,16 @@ header .logo img {
         margin-right: 0px;
     }
 
-    /*.barra-lateral .menu a:hover > i {
-        margin-right: 10px;
-    }*/
-
     .barra-lateral .menu a span {
         transition: display 1000ms;
         display: none;
     }
 
-    /*.barra-lateral .menu a:hover span{
-        display: inline;
-    }*/
-
-    .dropdown-menu {
+    /* .dropdown-menu {
         margin: 20px;
-    }
+    } */
 
     body {
         font-size: 16px;
-        overflow: visible;
     }
 }
-
-/*@media screen and (max-width: 750px) {
-   
-}*/

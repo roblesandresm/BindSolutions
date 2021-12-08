@@ -4,15 +4,15 @@
     3- listar productos
     4- dar de baja productos
 -->
-<main class="main col">
+<main class="main col-10">
     <div class="row">
-        <div class="col-lg-6 col-xs-12">
+        <div class="col-6 col-xs-12">
             <h1>Administrar productos</h1>
         </div>
-        <div class="col-lg-6 col-xs-12">
+        <div class="col-6 col-xs-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i>Home</a></li>
+                    <li class="breadcrumb-item"><a href="inicio"><i class="fas fa-home"></i>Home</a></li>
                     <li class="breadcrumb-item" aria-current="page">Administrar productos</li>
                 </ol>
             </nav>

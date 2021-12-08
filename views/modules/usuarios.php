@@ -1,5 +1,5 @@
 <!-- CONTENIDO GESTION DE USUARIOS -->
-<main class="main col">
+<main class="main col-10">
     <div class="row">
         <div class="col">
             <h1>Administrar usuarios</h1>

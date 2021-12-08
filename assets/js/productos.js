@@ -53,7 +53,6 @@ $(document).on('click', '.btnEditarProducto', function () {
         processData: false,
         dataType: "json",
         success: function (respuesta) {
-            console.log("respuesta: ", respuesta);
             $('#editarProducto').val(respuesta['nombre']);
             $('#idProducto').val(respuesta['id']);
             $('#editarPrecioCompra').val(respuesta['precio_compra']);
@@ -73,7 +72,6 @@ $(document).on('click', '.btnEditarProducto', function () {
 /* ELIMINAR PRODUCTO */
 $(document).on('click', '.btnEliminarProducto', function () {
     var idProducto = $(this).attr('idProducto');
-    console.log(idProducto);
 
     var datos = new FormData();
     datos.append('idEliminarProducto', idProducto);

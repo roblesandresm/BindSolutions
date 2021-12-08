@@ -67,9 +67,10 @@
 
 
     <!-- Sources hosting -->
-    <script src="assets/js/jquery-3.6.0.slim.min.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/responsive.bootstrap4.min.js"></script>
     <script src="assets/js/dataTables.bootstrap4.min.js"></script>
     <script src="assets/js/responsive.bootstrap4.min.js"></script>
     <script src="assets/js/DataTables.responsive.min.js"></script>
@@ -77,5 +78,6 @@
     <script src="assets/js/app.js"></script>
     <script src="assets/js/usuarios.js"></script>
     <script src="assets/js/productos.js"></script>
+    <script src="assets/js/eventos.js"></script>
 </body>
 </html>
