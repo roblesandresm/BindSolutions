@@ -54,7 +54,7 @@
                         $route[1] == "ventas" ||
                         $route[1] == "salir"
                     ) {
-                        include "modules/".$route[1].".php";
+                        include "modules/".$route[1].".php";    
                     } else {
                         include "modules/404.php";
                     }
