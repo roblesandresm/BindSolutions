@@ -1,5 +1,9 @@
 <?php 
     session_start();
+
+    require_once "./Route.php";
+    $routes = new Route(true);
+    $route = $routes->getRoutes();
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,7 +20,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- SweetAlert2 -->
     <script src="assets/js/sweetalert2.all.min.js"></script>
-    <title><?php $title = isset($_SESSION["iniciarSesion"]) == "ok" ? $_GET["ruta"] : "iniciar sesion" ; echo $title; ?> | Dashboard </title>
+    <title><?php $title = isset($_SESSION["iniciarSesion"]) == "ok" ? "Dashboard | Bindsolutions" : "iniciar sesion" ; echo $title; ?> </title>
   </head>
   <body>
     <?php 
@@ -37,22 +41,24 @@
                 include "modules/sidebar.php";
 
                 /**
-                 * CONTENT
+                 * CONTENT Y CONFIG RUTAS
                 */
-                if (isset($_GET["ruta"])) {
-                    if ($_GET["ruta"] == "inicio" ||
-                        $_GET["ruta"] == "usuarios" ||
-                        $_GET["ruta"] == "productos" ||
-                        $_GET["ruta"] == "eventos" ||
-                        $_GET["ruta"] == "puntos-venta" ||
-                        $_GET["ruta"] == "inventarios" ||
-                        $_GET["ruta"] == "ventas" ||
-                        $_GET["ruta"] == "salir"
+                if (!empty($route[1])) {
+                    /* echo "<h1>".$route[1]."</h1>"; */
+                    if ($route[1] == "inicio" ||
+                        $route[1] == "usuarios" ||
+                        $route[1] == "productos" ||
+                        $route[1] == "eventos" ||
+                        $route[1] == "puntos-venta" ||
+                        $route[1] == "inventarios" ||
+                        $route[1] == "ventas" ||
+                        $route[1] == "salir"
                     ) {
-                        include "modules/".$_GET["ruta"].".php";
+                        include "modules/".$route[1].".php";
                     } else {
                         include "modules/404.php";
                     }
+                    
                 } else {
                     include "modules/inicio.php";
                 }
