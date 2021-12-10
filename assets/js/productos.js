@@ -71,34 +71,48 @@ $(document).on('click', '.btnEditarProducto', function () {
 
 /* ELIMINAR PRODUCTO */
 $(document).on('click', '.btnEliminarProducto', function () {
-    var idProducto = $(this).attr('idProducto');
+    Swal.fire({
+        title: 'Seguro que deseas eliminar el Productp?',
+        text: "Ya no podras volver a verlo en tu lista!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, Eliminar!'
+    }).then((result) => {
+        
+        if (result.isConfirmed) {
+    
+            var idProducto = $(this).attr('idProducto');
 
-    var datos = new FormData();
-    datos.append('idEliminarProducto', idProducto);
+            var datos = new FormData();
+            datos.append('idEliminarProducto', idProducto);
 
-    $.ajax({
-        url: "ajax/productos.ajax.php",
-        method: "POST",
-        data: datos,
-        cache: false,
-        contentType: false,
-        processData: false,
-        dataType: "json",
-        success: function (respuesta) {
-            if (respuesta === "ok") {
-                Swal.fire({
-                    icon: "success",
-                    title: "El producto se ha Eliminado",
-                    showConfirmButton: true,
-                    confirmButtonText: "Cerrar",
-                    closeOnConfirm: false
-                }).then(result => {
-                    if(result.value){
-                        window.location = "productos";
+            $.ajax({
+                url: "ajax/productos.ajax.php",
+                method: "POST",
+                data: datos,
+                cache: false,
+                contentType: false,
+                processData: false,
+                dataType: "json",
+                success: function (respuesta) {
+                    if (respuesta === "ok") {
+                        Swal.fire({
+                            icon: "success",
+                            title: "El producto se ha Eliminado",
+                            showConfirmButton: true,
+                            confirmButtonText: "Cerrar",
+                            closeOnConfirm: false
+                        }).then(result => {
+                            if(result.value){
+                                window.location = "productos";
+                            }
+                        });
                     }
-                });
-            }
-        }
+                }
+            });
+        }   
     });
 
 });

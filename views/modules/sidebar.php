@@ -5,6 +5,7 @@
         <a href="eventos"><i class="fas fa-calendar-check"></i><span>Eventos</span></a>
         <a href="usuarios" alt="Usuarios"><i class="fas fa-users"></i><span>Usuarios</span></a>
         <a href="productos"><i class="fab fa-product-hunt"></i><span>Productos</span></a>
+        <a href="inventarios"><i class="fas fa-boxes"></i><span>Inventarios</span></a>
         <a href="puntos-venta"><i class="fas fa-store"></i><span>Puntos de venta</span></a>
         <a href="ventas"><i class="fas fa-dollar-sign"></i><span>Ventas</span></a>
     </nav> 

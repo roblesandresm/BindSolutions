@@ -1,7 +1,6 @@
 // EDITAR PUNTO DE VENTA
 $(document).on('click', '.btnEditarPuntoVenta', function () {
     var idPuntoVenta = $(this).attr('idPuntoVenta');
-    console.log(idPuntoVenta);
 
     var datos = new FormData();
     datos.append('idPuntoVenta', idPuntoVenta);
@@ -15,7 +14,7 @@ $(document).on('click', '.btnEditarPuntoVenta', function () {
         processData: false,
         dataType: "json",
         success: function (respuesta) {
-            console.log("respuesta: ",respuesta);
+
             $('#editarPuntoVenta').val(respuesta['nombre']);
             $('#idPuntoVenta').val(respuesta['id']);
             $("#editarEventoPv").val(respuesta['id_evento']);
@@ -131,7 +130,6 @@ $(document).on('click', '.btnActivarPv', function () {
     }).then((result) => {
 
         if (result.isConfirmed) {
-            console.log(idPuntoVenta, estadoPuntoVenta);
           
             var datosActivar = new FormData();
             datosActivar.append('idPuntoVentaAccion', idPuntoVenta);
@@ -146,7 +144,6 @@ $(document).on('click', '.btnActivarPv', function () {
                 contentType: false,
                 processData: false,
                 success: function (respuesta) {
-                    console.log("respuesta: ",respuesta);
                     Swal.fire(
                         acciones[1] + '!',
                         'El Punto de venta ha sido ' + acciones[1],

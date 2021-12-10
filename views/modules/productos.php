@@ -19,14 +19,14 @@
         </div>
     </div>
     <div class="row action-buttons mb-3">
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarProducto">Agregar producto</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarProducto">Agregar nuevo producto</button>
     </div>
     <table class="table dt-responsive table-hover tablas-pos tablaProductos">
         <thead>
             <tr>
                 <th scope="col" style="width: 10px;">ID</th>
-                <th scope="col">Nombre</th>
                 <th scope="col">Foto</th>
+                <th scope="col">Nombre</th>
                 <th scope="col">Precio de compra</th>
                 <th scope="col">Precio de venta</th>
                 <th scope="col">Acciones</th>
@@ -43,7 +43,6 @@
             ?>
             <tr>
                 <td><?php echo $value['id']; ?></td>
-                <td><?php echo $value['nombre']; ?></td>
                 <?php
                     if ($value['foto'] != "") {
                         echo "<td><img src=".$value['foto']." class='img-thumbnail' width='40px'></td>";
@@ -51,10 +50,12 @@
                         echo "<td><img src='views/img/productos/default/anonymous.png' class='img-thumbnail' width='40px'></td>";
                     }
                 ?>
+                <td><?php echo $value['nombre']; ?></td>
                 <td class="text-success">$<?php echo $value['precio_compra']; ?></td>
                 <td class="text-success">$<?php echo $value['precio_venta']; ?></td>
                 <td>
                     <div class="btn-group">
+                        <button class="btn btn-success btn-sm btnAgregarInventario" idProducto="<?php echo $value['id']; ?>" data-toggle="modal" data-target="#modalAgregarProductoInventario"><i class="fas fa-plus"></i></button>
                         <button class="btn btn-warning btn-sm btnEditarProducto" idProducto="<?php echo $value['id']; ?>" data-toggle="modal" data-target="#modalEditarProducto"><i class="fas fa-pencil-alt"></i></button>
                         <button class="btn btn-danger btn-sm btnEliminarProducto" idProducto="<?php echo $value['id']; ?>"><i class="fas fa-times"></i></button>
                     </div>
@@ -199,7 +200,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary" id="btnEditarProducto">Agregar producto</button>
+                        <button type="submit" class="btn btn-primary" id="btnEditarProducto">Editar producto</button>
                     </div>
                 </form>
                 <?php 

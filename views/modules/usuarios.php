@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="row action-buttons">
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalAgregarUsuario">Crear usuario</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarUsuario">Crear nuevo usuario</button>
     </div>
     <table class="table dt-responsive table-hover tablas-pos">
         <thead>
