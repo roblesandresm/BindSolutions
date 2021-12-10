@@ -1,5 +1,5 @@
 <!-- GESTION DE PUNTOS DE VENTA -->
-<main class="main col-10">
+<main class="main col">
     <div class="row">
         <div class="col-lg-6 col-xs-12">
             <h1>Administrar puntos de venta</h1>
