@@ -45,16 +45,16 @@
                 <td>
                     <?php
                     if ($value['estado'] == 1) {
-                        echo "<button class='btn btn-sm btn-success btnActivo' idPuntoVenta='".$value['id']."'>Activo</button>";
+                        echo "<button class='btn btn-sm btn-success btnActivarPv' estadoPuntoVenta='".$value['estado']."' idPuntoVenta='".$value['id']."'>Activo</button>";
                     } else if ($value['estado'] == 2) {
-                        echo "<button class='btn btn-sm btn-success btnActivo' idPuntoVenta='".$value['id']."'>Desactivado</button>";
+                        echo "<button class='btn btn-sm btn-warning btnActivarPv' estadoPuntoVenta='".$value['estado']."' idPuntoVenta='".$value['id']."'>Desactivado</button>";
                     }
                     ?>
                 </td>
                 <td>
                     <div class="btn-group">
-                        <button class="btn btn-warning btn-sm btnEditarPuntoVenta" idPuntoVenta="" data-toggle="modal" data-target="#modalEditarPuntoVenta"><i class="fas fa-pencil-alt"></i></button>
-                        <button class="btn btn-danger btn-sm btnEliminarPuntoVenta" idEliminarPuntoVenta=""><i class="fas fa-times"></i></button>
+                        <button class="btn btn-warning btn-sm btnEditarPuntoVenta" idPuntoVenta="<?php echo $value['id']; ?>" data-toggle="modal" data-target="#modalEditarPuntoVenta"><i class="fas fa-pencil-alt"></i></button>
+                        <button class="btn btn-danger btn-sm btnEliminarPuntoVenta" idPuntoVenta="<?php echo $value['id']; ?>"><i class="fas fa-times"></i></button>
                     </div>
                 </td>
             </tr>
@@ -151,6 +151,78 @@
                 <?php 
                     $crearPv = new ControllerPuntosVenta();
                     $crearPv->ctrCrearPuntoVenta();
+                ?>
+            </div>
+        </div>
+    </div>
+
+    <!--========================== 
+    = MODAL EDITAR PUNTO DE VENTA
+    ============================-->
+
+    <div class="modal fade" id="modalEditarPuntoVenta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" role="form" enctype="multipart/form-data">
+
+                    <!-- CABECERA DEL MODAL-->
+                    <div class="modal-header" style="background: #3c8dbc; color: white;">
+                        <h5 class="modal-title" id="exampleModalLabel">Editar Punto de venta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <!-- CUERPO DEL MODAL -->
+                    <div class="modal-body">
+
+                        <input type="hidden" name="editarPuntoVenta" id="editarPuntoVenta">
+                        <input type="hidden" name="idPuntoVenta" id="idPuntoVenta">
+
+                        <!-- Entreda para el vevento donde se creara el punto de venta -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="editarEventoPv"><i class="fas fa-calendar-check"></i></label>
+                                </div>
+                                <input class="form-control input-lg" type="text" id="editarEventoNombre" readonly required>
+                                <input type="hidden" name="editarEventoPv" id="editarEventoPv">
+                            </div>
+                        </div>
+
+                        <!-- Entreda para el vendedor del punto de venta -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="editarVendedorPv"><i class="fas fa-user"></i></label>
+                                </div>
+                                <select name="editarVendedorPv" class="form-control input-lg" required>
+                                    <option id="editarVendedorPv" value="">-- Seleccionar un vendedor --</option>
+
+                                    <?php
+                                    $item = null;
+                                    $valor = null; 
+                                    $vendedor = ControllerUsuarios::ctrMostrarUsuario($item, $valor);
+
+                                    foreach ($vendedor as $key => $value) {
+                                        if ($value['tipo'] == 'vendedor' && $value['estado'] == 1) {
+                                            echo "<option value=".$value['id'].">".$value['nombre']."</option>";
+                                        }
+                                    }      
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+                
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary" id="btnAgregarPv">Crear punto de venta</button>
+                    </div>
+                </form>
+                <?php 
+                    $editarPv = new ControllerPuntosVenta();
+                    $editarPv->ctrEditarPuntoVenta();
                 ?>
             </div>
         </div>

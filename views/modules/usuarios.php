@@ -22,7 +22,6 @@
                 <th scope="col">Username</th>
                 <th scope="col">Perfil</th>
                 <th scope="col">Estado</th>
-                <th scope="col">Ultimo login</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
@@ -47,7 +46,6 @@
                             echo '<td><button class="btn btn-danger btn-sm btnActivar" idUsuario='.$value["id"].' estadoUsuario="1">Desactivado</button></td>';
                         }
                     ?>
-                    <td><?php echo $value['ultimo_login']; ?></td>
                     <td>
                         <div class="btn-group">
                             <button class="btn btn-warning btn-sm btnEditarUsuario" idUsuario="<?php echo $value['id']; ?>" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fas fa-pencil-alt"></i></button>

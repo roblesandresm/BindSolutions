@@ -35,7 +35,7 @@ class AjaxEventos {
     }
 
     /*====================
-     *  TERMINAR EVENTO  =
+     *  ELIMINAR EVENTO  =
     ====================*/
     public $idEliminarEvento;
 

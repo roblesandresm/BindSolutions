@@ -79,7 +79,7 @@ class ControllerEventos
     }
 
     /**=================================
-    * CREAR EVENTOS
+    * EDITAR EVENTOS
     ==================================*/
     static public function ctrEditarEvento() {
 

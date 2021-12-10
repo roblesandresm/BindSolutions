@@ -85,5 +85,6 @@
     <script src="assets/js/usuarios.js"></script>
     <script src="assets/js/productos.js"></script>
     <script src="assets/js/eventos.js"></script>
+    <script src="assets/js/puntos-venta.js"></script>
 </body>
 </html>

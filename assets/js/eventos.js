@@ -1,4 +1,4 @@
-/* EDITAR PRODUCTO */
+/* EDITAR EVENTO */
 $(document).on('click', '.btnEditarEvento', function () {
     var idEvento = $(this).attr('idEvento');
 
@@ -95,7 +95,7 @@ $(document).on('click', '.btnEditarEvento', function () {
 
 
 /**
-* TERMINAR UN EVENTO
+* ELIMADO LOGICO DE UN EVENTO
 */
 $(document).on('click', '.btnEliminarEvento', function () {
 
@@ -111,7 +111,6 @@ $(document).on('click', '.btnEliminarEvento', function () {
 
         if (result.isConfirmed) {
             var idEvento = $(this).attr('idEliminarEvento');
-            console.log(idEvento);
           
             var datos = new FormData();
             datos.append('idEliminarEvento', idEvento);
